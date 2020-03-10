@@ -1,6 +1,11 @@
-
 import { NativeModules } from 'react-native';
 
 const { RNNetinterfaces } = NativeModules;
 
-export default RNNetinterfaces;
+const NetInterfaces = {
+    async getInterfaces() {
+        return await RNNetinterfaces.getInterfaces();
+    }
+}
+
+export { NetInterfaces };
